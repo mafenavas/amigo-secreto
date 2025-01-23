@@ -1,6 +1,6 @@
 let listaNombreSorteados = [];
 
-function agregarAmigos() {
+function agregarAmigo() {
     let nombreAgregado = document.querySelector('#amigo').value
 
     if (nombreAgregado == '') {
