@@ -1,14 +1,27 @@
 let listaNombreSorteados = [];
 
 function agregarAmigo() {
-    let nombreAgregado = document.querySelector('#amigo').value
+    let inputAmigo = document.querySelector('#amigo')
+    let nombreAgregado = inputAmigo.value
 
     if (nombreAgregado == '') {
-
         alert("Porfavor inserte un nombre válido")
     } else {
-
         listaNombreSorteados.push(nombreAgregado)
-        document.querySelector('#amigo').value = '';
+        inputAmigo.value = '';
+    }
+    actualizarLista();
+}
+
+function actualizarLista() {
+    let listaAmigos = document.querySelector('#listaAmigos')
+    listaAmigos.innerHTML = ''
+
+    let lista = ''
+    for (let i = 0; i < listaNombreSorteados.length; i++) {
+        let nombreAmigo = listaNombreSorteados[i];
+        lista = `${lista} <li>${nombreAmigo}</li>`
+        listaAmigos.innerHTML = lista
+        
     }
 }
