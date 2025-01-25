@@ -22,6 +22,19 @@ function actualizarLista() {
         let nombreAmigo = listaNombreSorteados[i];
         lista = `${lista} <li>${nombreAmigo}</li>`
         listaAmigos.innerHTML = lista
-        
+
     }
 }
+
+function sortearAmigo() {
+
+    if (listaNombreSorteados == '') {
+        alert('Debe ingresar un nombre')
+    } else {
+        let indiceSorteado = Math.floor(Math.random() * listaNombreSorteados.length);
+        let nombreSorteado = listaNombreSorteados[indiceSorteado]
+        let resultado = document.getElementById('resultado')
+        resultado.innerHTML = `El nombre sorteado es ${nombreSorteado}`
+    }
+
+} 
